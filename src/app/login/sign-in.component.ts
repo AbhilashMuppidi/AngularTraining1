@@ -4,9 +4,6 @@ import { Component } from "@angular/core";
     //tag name for project
     selector:"sign-in",
     //template:"<h2>My first angular component</h2>"   
-    template:`Sign in heading`
+    template:`<mysign></mysign>`
 })
-export class SignInComponent
-{
-
-}
+export class SignInComponent{}

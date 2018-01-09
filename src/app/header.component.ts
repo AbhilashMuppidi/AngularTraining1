@@ -1,4 +1,5 @@
 import {Component} from "@angular/core"
+import { LoginService } from "./services/login.service";
 
 @Component({
     //tag name for project
@@ -9,11 +10,12 @@ import {Component} from "@angular/core"
 export class HeaderComponent
 {   
     hdrUserName:string;
-    constructor(){
+    constructor(private lsvc:LoginService){
         console.log("I am in App Component")
-        this.hdrUserName = "Guest";
+        this.hdrUserName = lsvc.getUserName();
     }
     showUserName():string{
+        this.hdrUserName=this.lsvc.getUserName();
         return this.hdrUserName;
     }
 }

@@ -2,6 +2,10 @@ import { Component } from "@angular/core";
 
 @Component({
     selector:"sign-up",
-    template:`<mysign></mysign>`
+    // Properties of the class are accessed using [].
+    template:`<mysign [title]="myTitle"></mysign>`
 })
-export class SignUpComponent{}
+export class SignUpComponent{
+    myTitle:string = "Quick Sign Up";
+
+}

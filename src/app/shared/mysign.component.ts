@@ -1,12 +1,16 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
     selector: "mysign",
-    template:`<h3> My sign Heading </h3>
+    template:`<h3>{{title}}</h3>
         <form>
         <input type="text" placeholder="Enter UserName">
         <input type="password" placeholder="Enter Password">
-        <button type="button">my button</button>
+        <button type="button">{{title}}</button>
         </form>`
 })
-export class MySignComponent{}
+export class MySignComponent{
+    @Input()
+    title:string;
+
+}

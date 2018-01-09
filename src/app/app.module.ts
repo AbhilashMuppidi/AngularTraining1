@@ -8,6 +8,7 @@ import { HomeComponent, NotFoundComponent } from "./shared/routes.components";
 import { RouterModule } from "@angular/router";
 import { SignInComponent } from "./login/sign-in.component";
 import { SignUpComponent } from "./login/sign-up.component";
+import { ShoppingModule } from "./shopping/shopping.module";
 
 @NgModule({
     //Registering component s
@@ -18,7 +19,7 @@ import { SignUpComponent } from "./login/sign-up.component";
         {path:"signin",component:SignInComponent},
         {path:"signup",component:SignUpComponent},
         {path:"**",component:NotFoundComponent}
-    ], {useHash: true})],
+    ], {useHash: true}), ShoppingModule],
     providers: [LoginService]
 })
 export class AppModule{    

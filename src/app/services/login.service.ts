@@ -11,4 +11,13 @@ export class LoginService{
     {
         return this.userName;
     }
+    isValidUser(uname:string,pwd:string){
+        if(uname=="Admin")
+        {
+            return true;            
+        }
+        else
+            return false;
+
+    }
 }

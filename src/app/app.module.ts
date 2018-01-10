@@ -4,12 +4,13 @@ import {BrowserModule} from "@angular/platform-browser"
 import { HeaderComponent } from "./header.component";
 import { LoginModule } from "./login/login.module";
 import { LoginService } from "./services/login.service";
-import { HomeComponent, NotFoundComponent, ExamplesComponent, BindingDemoComponent, PipesDemoComponent, DashboardComponent } from "./shared/routes.components";
+import { HomeComponent, NotFoundComponent, ExamplesComponent, BindingDemoComponent, PipesDemoComponent, DashboardComponent, LogoutComponent, ErrorComponent } from "./shared/routes.components";
 import { RouterModule } from "@angular/router";
 import { SignInComponent } from "./login/sign-in.component";
 import { SignUpComponent } from "./login/sign-up.component";
 import { ShoppingModule } from "./shopping/shopping.module";
 import { CategoryService } from "./services/category.service";
+import { error } from "util";
 let approutes = [
     {path:"",component:HomeComponent},
     {path:"examples",component:ExamplesComponent, children:[
@@ -18,6 +19,8 @@ let approutes = [
     ]},   
     {path:"signin",component:SignInComponent},
     {path:"signup",component:SignUpComponent},
+    {path:"logout",component:LogoutComponent},
+    {path:"error",component:ErrorComponent},
     {path:"**",component:NotFoundComponent}
 ];
 
@@ -25,7 +28,7 @@ let approutes = [
     //Registering component s
     declarations:[AppComponent, HeaderComponent,HomeComponent,
          NotFoundComponent,ExamplesComponent,BindingDemoComponent,
-         PipesDemoComponent],
+         PipesDemoComponent,LogoutComponent,ErrorComponent],
     bootstrap:[AppComponent],
     imports:[BrowserModule,LoginModule, 
         RouterModule.forRoot(approutes, {useHash: true}), ShoppingModule],

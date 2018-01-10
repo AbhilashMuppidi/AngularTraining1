@@ -43,3 +43,12 @@ export class PipesDemoComponent{}
     <div class="col-sm-9"><router-outlet></router-outlet></div>`
 })
 export class DashboardComponent{}
+@Component({
+    template: `<h2 class="well">Your are logged out</h2>`
+})
+export class LogoutComponent{}
+@Component({
+        template: `<h2 class="jumbtron">Your are not authorized</h2>`
+})
+export class ErrorComponent{}
+    

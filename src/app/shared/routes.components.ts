@@ -36,13 +36,10 @@ export class BindingDemoComponent{}
 export class PipesDemoComponent{}
 
 @Component({
-    template: `<h3> Shopping Dashboard</h3>
-    <div class="col-sm-3 well">
-        <ul class="nav navbar-sidebar">
-            <li><a routerLink="ctg">Categories List</a></li>
-            <li><a routerLink="products">Products List</a></li>
-        </ul>
-    </div>
+    template: `<h3> Shopping Dashboard </h3>
+            <a routerLink="ctg">Categories</a> |
+            <a routerLink="products">Products</a>
+        <hr>
     <div class="col-sm-9"><router-outlet></router-outlet></div>`
 })
 export class DashboardComponent{}

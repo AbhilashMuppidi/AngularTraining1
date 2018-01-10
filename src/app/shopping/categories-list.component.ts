@@ -9,8 +9,8 @@ import { Category } from "../models/category.model";
 export class CategoriesListComponent{
     headings:string[]=[];
     categories:Array<Category>=[];
-    private csvc:CategoryService=new CategoryService();
-    constructor(){
+    ///private csvc:CategoryService=new CategoryService();
+    constructor(private csvc:CategoryService){
         this.headings=["Id","Category Name"]
         this.categories=this.csvc.getCategories();
     }

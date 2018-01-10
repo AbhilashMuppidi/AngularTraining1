@@ -12,6 +12,8 @@ import { ShoppingModule } from "./shopping/shopping.module";
 import { CategoryService } from "./services/category.service";
 import { error } from "util";
 import { LoginGuard } from "./login/login.guard";
+import { FormsModule } from "@angular/forms";
+    
 let approutes = [
     {path:"",component:HomeComponent},
     {path:"examples",component:ExamplesComponent, children:[
@@ -32,7 +34,7 @@ let approutes = [
          PipesDemoComponent,LogoutComponent,ErrorComponent],
     bootstrap:[AppComponent],
     imports:[BrowserModule,LoginModule, 
-        RouterModule.forRoot(approutes, {useHash: true}), ShoppingModule],
+        RouterModule.forRoot(approutes, {useHash: true}), ShoppingModule, FormsModule],
     providers: [LoginService,CategoryService]
 })
 export class AppModule{    

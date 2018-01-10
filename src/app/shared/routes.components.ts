@@ -34,9 +34,7 @@ export class ExamplesComponent{}
     <h1 [innerHTML]="count"></h1>
     <input type="text" value="count">
     <input type="number" [value]="count">
-    `
-    
-
+    <input type="number" [(ngModel)]="count">`
 })
 export class BindingDemoComponent{
     orgName:String="<b><u>UHG</u></b>"

@@ -9,7 +9,10 @@ import { Input } from "@angular/core";
         <th *ngFor="let heading of colHeadings">{{heading}}</th>
     </tr>
     <tr *ngFor="let row of data">
-        <td *ngFor="let item of Object.keys(data)">{{item}}</td>
+        <td *ngFor="let col of cols">{{row[col]}}</td>
+    </tr>
+    <tr *ngIf="data.length==0">
+        <td [colSpan]="colHeadings.length">No Data Found.</td>
     </tr>
     </table>`
 })
@@ -20,4 +23,15 @@ export class MyTableComponent {
     colHeadings: string[] = [];
     @Input()
     data: any[] = [];
+
+    cols;
+    constructor()
+    {
+        console.log(this.data[0])
+    }
+    ngOnChanges(){
+        if(this.data[0]!=undefined){        
+            this.cols=Object.keys(this.data[0])
+        }
+    }
 }

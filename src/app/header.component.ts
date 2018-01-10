@@ -12,10 +12,12 @@ import { LoginService } from "./services/login.service";
         </div>
         <ul class="nav navbar-nav">
             <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/examples">Examples</a></li>
+            <li><a routerLink="/dashboard">Dashboard</a></li>
             <li><a routerLink="/signin">Sign In</a></li>
             <li><a routerLink="/signup">Sign Up</a></li>
-            <li><a routerLink="/ctg">Categories List</a></li>
-            <li><a routerLink="/products">Products List</a></li>
+            <!-- <li><a routerLink="/ctg">Categories List</a></li>
+             <li><a routerLink="/products">Products List</a></li>-->
         </ul>
         <ul class="nav navbar-nav navbar-right">
            <p class="navbar-text">Welcome {{showUserName()}}</p>

@@ -12,7 +12,8 @@ let dashboardroutes = [
         {path:"",component:CategoriesListComponent},
         {path:"ctg",component:CategoriesListComponent},
         {path:"products",component:ProductsComponent, children:[
-            {path:"",component:ProductsListComponent}
+            {path:"",component:ProductsListComponent},
+            {path:":ctgId",component:ProductsListComponent}
         ]}
     ]}  
 ];

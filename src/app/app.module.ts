@@ -11,6 +11,7 @@ import { SignUpComponent } from "./login/sign-up.component";
 import { ShoppingModule } from "./shopping/shopping.module";
 import { CategoryService } from "./services/category.service";
 import { error } from "util";
+import { LoginGuard } from "./login/login.guard";
 let approutes = [
     {path:"",component:HomeComponent},
     {path:"examples",component:ExamplesComponent, children:[

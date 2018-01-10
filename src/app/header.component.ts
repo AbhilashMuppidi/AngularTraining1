@@ -13,10 +13,10 @@ import { LoginService } from "./services/login.service";
         <ul class="nav navbar-nav">
             <li><a routerLink="/">Home</a></li>
             <li><a routerLink="/examples">Examples</a></li>
-            <li><a routerLink="/dashboard">Dashboard</a></li>
-            <li><a routerLink="/signin">Sign In</a></li>
-            <li><a routerLink="/signup">Sign Up</a></li>
-            <li><a routerLink="/logout">Logout</a></li>
+            <li *ngIf="isUserLoggedIn()"><a routerLink="/dashboard">Dashboard</a></li>
+            <li *ngIf="!isUserLoggedIn()"><a routerLink="/signin">Sign In</a></li>
+            <li *ngIf="!isUserLoggedIn()"><a routerLink="/signup">Sign Up</a></li>
+            <li *ngIf="isUserLoggedIn()"><a routerLink="/logout" (click)="doLogout()">Logout</a></li>
             <!-- <li><a routerLink="/ctg">Categories List</a></li>
              <li><a routerLink="/products">Products List</a></li>-->
         </ul>
@@ -35,5 +35,11 @@ export class HeaderComponent
     showUserName():string{
         this.hdrUserName=this.lsvc.getUserName();
         return this.hdrUserName;
+    }
+    isUserLoggedIn(){
+        return this.lsvc.getIsLoggedIn();
+    }
+    doLogout(){
+        return this.lsvc.setIsLoggedIn(false);
     }
 }

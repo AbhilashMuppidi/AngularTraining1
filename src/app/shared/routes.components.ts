@@ -26,9 +26,25 @@ export class NotFoundComponent{}
 export class ExamplesComponent{}
 
 @Component({
-    template: `<h2>Angular 5 Binding example</h2>`
+    template: `<h2>Angular 5 Binding example</h2>
+    Count Value is {{count}}
+    Organization Name is:{{orgName}}
+    <h3 [innerHTML]="orgName"></h3>
+    <button (click)="incrementCounter()">Increase</button>
+    <h1 [innerHTML]="count"></h1>
+    <input type="text" value="count">
+    <input type="number" [value]="count">
+    `
+    
+
 })
-export class BindingDemoComponent{}
+export class BindingDemoComponent{
+    orgName:String="<b><u>UHG</u></b>"
+    count:number=0;
+    incrementCounter(){
+        this.count++;
+    }
+}
 
 @Component({
     template: `<h2>Angular Pipes example</h2>`

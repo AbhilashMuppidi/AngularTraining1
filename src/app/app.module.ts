@@ -13,6 +13,7 @@ import { CategoryService } from "./services/category.service";
 import { error } from "util";
 import { LoginGuard } from "./login/login.guard";
 import { FormsModule } from "@angular/forms";
+import { ReversePipe } from "./app.pipe";
     
 let approutes = [
     {path:"",component:HomeComponent},
@@ -31,7 +32,7 @@ let approutes = [
     //Registering component s
     declarations:[AppComponent, HeaderComponent,HomeComponent,
          NotFoundComponent,ExamplesComponent,BindingDemoComponent,
-         PipesDemoComponent,LogoutComponent,ErrorComponent],
+         PipesDemoComponent,LogoutComponent,ErrorComponent,ReversePipe],
     bootstrap:[AppComponent],
     imports:[BrowserModule,LoginModule, 
         RouterModule.forRoot(approutes, {useHash: true}), ShoppingModule, FormsModule],

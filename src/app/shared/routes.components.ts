@@ -1,9 +1,19 @@
 import { Component } from "@angular/core";
+import {DomSanitizer} from '@angular/platform-browser';
+
 
 @Component({
-    template:`<h2> Home Page </h2>`
+    template:`<h2> Home Page </h2>
+        <iframe [src]="trustUrl" width="75%" height="300">` 
 })
-export class HomeComponent{}
+export class HomeComponent{
+    myVideoURL="https://www.youtube.com/embed/3TGCuKztsJ0";
+    trustUrl;
+    constructor(private sanity:DomSanitizer){
+        this.trustUrl=this.sanity.bypassSecurityTrustResourceUrl(this.myVideoURL);
+    }
+    
+}
 
 @Component({
     template: `<h1>404. Not Available</h1>`
@@ -45,9 +55,16 @@ export class BindingDemoComponent{
 }
 
 @Component({
-    template: `<h2>Angular Pipes example</h2>`
+    template: `<h2>Angular Pipes example</h2>
+    <br>Price Value {{price|currency:'EUR'|lowercase}}
+    <br>Date is {{dateVal|date: 'd/M/y'}}
+    <br>Product name is {{productName|uppercase | reverseText}}`
 })
-export class PipesDemoComponent{}
+export class PipesDemoComponent{
+    price = 100.1234
+    dateVal=new Date()
+    productName="Sony Tv"
+}
 
 @Component({
     template: `<h3> Shopping Dashboard </h3>

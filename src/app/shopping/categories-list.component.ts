@@ -12,6 +12,13 @@ export class CategoriesListComponent{
     ///private csvc:CategoryService=new CategoryService();
     constructor(private csvc:CategoryService){
         this.headings=["Id","Category Name"]
-        this.categories=this.csvc.getCategories();
+        this.csvc.getCategories().subscribe(
+            (data)=> {
+                console.log("Get Success",data);
+                this.categories=data;
+            },
+            (err)=>console.log("Get Error",err)
+        )
+        //this.categories=this.csvc.getCategories();
     }
 }

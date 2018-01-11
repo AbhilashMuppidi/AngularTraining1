@@ -7,7 +7,7 @@ import { DashboardComponent } from "../shared/routes.components";
 import { ProductsComponent } from "./products.component";
 import { CommonModule } from "@angular/common";
 import { LoginGuard } from "../login/login.guard";
-
+import { ReactiveFormsModule } from "@angular/forms";
 let dashboardroutes = [
     {
         path: "dashboard", component: DashboardComponent,
@@ -28,7 +28,7 @@ let dashboardroutes = [
     declarations: [ProductsListComponent, CategoriesListComponent,
         DashboardComponent, ProductsComponent],
     imports: [RouterModule.forChild(dashboardroutes), SharedModule,
-        CommonModule],
+        CommonModule, ReactiveFormsModule],
     providers: [LoginGuard]
 })
 export class ShoppingModule { }

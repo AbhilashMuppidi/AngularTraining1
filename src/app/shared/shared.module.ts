@@ -3,6 +3,7 @@ import { MySignComponent} from "./mysign.component";
 import { MyTableComponent } from "./mytable.component";
 import { CommonModule } from "@angular/common";
 import { DashboardComponent } from "./routes.components";
+
 @NgModule({
     declarations: [MySignComponent,MyTableComponent],
     exports:[MySignComponent,MyTableComponent],

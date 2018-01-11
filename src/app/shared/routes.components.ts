@@ -1,19 +1,34 @@
-import { Component } from "@angular/core";
+import { Component,ViewChild,ViewChildren,QueryList } from "@angular/core";
 import {DomSanitizer} from '@angular/platform-browser';
 
 
+@Component({
+    selector:"hello",
+    template:`<h3><i><u>Hello<ng-content></ng-content></u></i></h3>` 
+})
+export class HelloComponent{
+   
+}
 
 @Component({
-    template:`<h2> Home Page </h2>
-        <iframe [src]="trustUrl" width="75%" height="300">` 
+    template:`<h2 #header> Welcom Home Page {{myTemp?.length}}</h2>
+            <hello><b #inNgContent>Optum</b></hello>
+            <iframe [src]="trustUrl" width="75%" height="300">` 
 })
 export class HomeComponent{
+    @ViewChild(HelloComponent) vc:HelloComponent
+    @ViewChildren(HelloComponent) vcs:QueryList<HelloComponent>
     myVideoURL="https://www.youtube.com/embed/3TGCuKztsJ0";
     trustUrl;
     constructor(private sanity:DomSanitizer){
         this.trustUrl=this.sanity.bypassSecurityTrustResourceUrl(this.myVideoURL);
+        console.log("viewing Child", this.vc)
     }
-    
+    ngAfterViewInit()
+    {
+        console.log("View Child in Ng Afer VIew Inid",this.vc)
+        console.log("View Child in Ng Afer VIew Inid",this.vcs.length)
+    }
 }
 
 @Component({

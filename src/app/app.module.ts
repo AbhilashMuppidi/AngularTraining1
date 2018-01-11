@@ -4,7 +4,7 @@ import { BrowserModule } from "@angular/platform-browser"
 import { HeaderComponent } from "./header.component";
 import { LoginModule } from "./login/login.module";
 import { LoginService } from "./services/login.service";
-import { HomeComponent, NotFoundComponent, ExamplesComponent, BindingDemoComponent, PipesDemoComponent, DashboardComponent, LogoutComponent, ErrorComponent } from "./shared/routes.components";
+import { HomeComponent, NotFoundComponent, ExamplesComponent, BindingDemoComponent, PipesDemoComponent, DashboardComponent, LogoutComponent, ErrorComponent, HelloComponent } from "./shared/routes.components";
 import { RouterModule } from "@angular/router";
 import { SignInComponent } from "./login/sign-in.component";
 import { SignUpComponent } from "./login/sign-up.component";
@@ -36,7 +36,8 @@ let approutes = [
     //Registering component s
     declarations: [AppComponent, HeaderComponent, HomeComponent,
         NotFoundComponent, ExamplesComponent, BindingDemoComponent,
-        PipesDemoComponent, LogoutComponent, ErrorComponent, ReversePipe],
+        PipesDemoComponent, LogoutComponent, ErrorComponent, ReversePipe,
+    HelloComponent],
     bootstrap: [AppComponent],
     imports: [BrowserModule, LoginModule,
         RouterModule.forRoot(approutes, { useHash: true }), ShoppingModule,

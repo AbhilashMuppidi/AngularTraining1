@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Input } from "@angular/core";
+import { Input, Output,EventEmitter } from "@angular/core";
 
 @Component({
     selector: "mytable",
@@ -26,7 +26,8 @@ export class MyTableComponent {
     colHeadings: string[] = [];
     @Input()
     data: any[] = [];
-
+    @Output()
+    rowEvent=new EventEmitter();  
     cols;
     selectedValue;
     constructor()
@@ -38,7 +39,12 @@ export class MyTableComponent {
             this.cols=Object.keys(this.data[0])
         }
     }
+    showSelectedData(row){
+        this.tblTitle=row.name;
+        this.rowEvent.emit(row);
+    }
     updateHeader(row):void{
         this.selectedValue=row.name
+        this.rowEvent.emit(row);
     }
 }

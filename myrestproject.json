@@ -1,9 +1,42 @@
-{"wscategories":[
-	{"id":1,"name":"Home Appliances"},
-	{"id":2,"name":"Laptops"}
-],"wsproducts":[
-	{"id":1,"name":"Hitachi Ac", "price":45000,"ctgid":1},
-	{"id":1,"name":"Macbook Air", "price":145000,"ctgid":2},
-	{"id":1,"name":"Sony Bravia 55", "price":95000,"ctgid":1},
-	{"id":1,"name":"LG Refrigirator 230L", "price":95000,"ctgid":1}
-]}
+{
+  "wscategories": [
+    {
+      "id": 1,
+      "name": "Home Appliances"
+    },
+    {
+      "id": 3,
+      "name": "Added"
+    },
+    {
+      "id": 4,
+      "name": "UPDATING"
+    }
+  ],
+  "wsproducts": [
+    {
+      "id": 1,
+      "name": "Hitachi Ac",
+      "price": 45000,
+      "ctgid": 1
+    },
+    {
+      "id": 1,
+      "name": "Macbook Air",
+      "price": 145000,
+      "ctgid": 2
+    },
+    {
+      "id": 1,
+      "name": "Sony Bravia 55",
+      "price": 95000,
+      "ctgid": 1
+    },
+    {
+      "id": 1,
+      "name": "LG Refrigirator 230L",
+      "price": 95000,
+      "ctgid": 1
+    }
+  ]
+}

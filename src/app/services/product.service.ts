@@ -17,4 +17,14 @@ export class ProductService {
         return this.http.get<Product[]>(this.restUrl)
         //return this.productsData;
     }
+   
+    addProduct(newProduct:Product){
+        return  this.http.post<Product>(this.restUrl,newProduct);
+    }
+    deleteProduct(id:number){
+        return  this.http.delete<Product>(this.restUrl+"/"+id);
+    }
+    updateProduct(product:Product){
+        return  this.http.put<Product>(this.restUrl+"/"+product.id,product);
+    }
 }
